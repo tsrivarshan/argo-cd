@@ -33,26 +33,9 @@ spec:
   ports:
   - port: 80
     targetPort: http
-    nodePort: 31045
+    nodePort: 31043
     protocol: TCP
     name: http
   selector:
     app: rollouts-demo
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: rollouts-ingress
-  annotations:
-    kubernetes.io/ingress.class: nginx
-spec:
-  rules:
-  - http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: rollouts-demo
-            port:
-              number: 80
+
