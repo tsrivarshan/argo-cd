@@ -1,0 +1,10 @@
+name: linux commands
+
+on: [push]
+
+jobs:
+  run-shell-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo string
+        run: echo "sai welcome to actions"
